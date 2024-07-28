@@ -86,14 +86,14 @@ def mergeOneRowL(row):
     return row
 
 
-#Merge Left Function
+# Merge Left Function
 def merge_left(currentBoard):
     for i in range(boardSize):
         currentBoard[i] = mergeOneRowL(currentBoard[i])
     return currentBoard
 
 
-#Reverse Row Function
+# Reverse Row Function
 def reverse(row):
     new = []
     for i in range(boardSize - 1, -1, -1):
@@ -101,10 +101,21 @@ def reverse(row):
     return new
 
 
-#Merge Right Function
+# Merge Right Function
 def merge_right(currentBoard):
     for i in range(boardSize):
         currentBoard[i] = reverse(currentBoard[i])
         currentBoard[i] = mergeOneRowL(currentBoard[i])
         currentBoard[i] = reverse(currentBoard[i])
+    return currentBoard
+
+
+# Transpose Function
+def transpose(currentBoard):
+    for j in range(boardSize):
+        for i in range(j, boardSize):
+            if not i == j:
+                temp = currentBoard[j][i]
+                currentBoard[j][i] = currentBoard[i][j]
+                currentBoard[i][j] = temp
     return currentBoard
