@@ -127,3 +127,19 @@ def merge_up(currentBoard):
     currentBoard = merge_left(currentBoard)
     currentBoard = transpose(currentBoard)
     return currentBoard
+
+
+# Merge Down Function
+def merge_down(currentBoard):
+    currentBoard = transpose(currentBoard)
+    currentBoard = merge_right(currentBoard)
+    currentBoard = transpose(currentBoard)
+    return currentBoard
+
+
+# Pick New Value Function
+def pickNewValue():
+    if random.randint(1, 8) - 1:
+        return 4
+    else:
+        return 2
