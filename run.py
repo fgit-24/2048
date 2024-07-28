@@ -64,3 +64,23 @@ def display():
                 currRow += (' ' * (numSpaces - len(str(element)))) + str(element) + '|'
         print(currRow)
     print()
+
+
+# Merge One Row Left Function
+def mergeOneRowL(row):
+    for i in range(boardSize - 1):
+        for j in range(boardSize - 1, 0, -1):
+            if row[j - 1] == 0:
+                row[j - 1] = row[j]
+                row[j] = 0
+
+    for i in range(boardSize - 1):
+        if row[i] == row[i + 1]:
+            row[i] *= 2
+            row[i + 1] = 0
+
+    for i in range(boardSize - 1, 0, -1):
+        if row[i - 1] == 0:
+            row[i - 1] = row[i]
+            row[i] = 0
+    return row
