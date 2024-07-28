@@ -143,3 +143,15 @@ def pickNewValue():
         return 4
     else:
         return 2
+
+
+# Add New Value Function
+def addNewValue():
+    rowNum = random.randint(0, boardSize - 1)
+    colNum = random.randint(0, boardSize - 1)
+
+    while not board[rowNum][colNum] == 0:
+        rowNum = random.randint(0, boardSize - 1)
+        colNum = random.randint(0, boardSize - 1)
+
+    board[rowNum][colNum] = pickNewValue()
