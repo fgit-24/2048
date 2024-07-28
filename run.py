@@ -163,3 +163,22 @@ def won():
         if 2048 in row:
             return True
     return False
+
+
+
+# No Moves Function
+def noMoves():
+    tempBoard1 = copy.deepcopy(board)
+    tempBoard2 = copy.deepcopy(board)
+
+    tempBoard1 = merge_down(tempBoard1)
+    if tempBoard1 == tempBoard2:
+        tempBoard1 = merge_up(tempBoard1)
+    if tempBoard1 == tempBoard2:
+        tempBoard1 = merge_left(tempBoard1)
+    if tempBoard1 == tempBoard2:
+        tempBoard1 = merge_right(tempBoard1)
+    if tempBoard1 == tempBoard2:
+        return True
+    else:
+        return False
