@@ -99,3 +99,12 @@ def reverse(row):
     for i in range(boardSize - 1, -1, -1):
         new.append(row[i])
     return new
+
+
+#Merge Right Function
+def merge_right(currentBoard):
+    for i in range(boardSize):
+        currentBoard[i] = reverse(currentBoard[i])
+        currentBoard[i] = mergeOneRowL(currentBoard[i])
+        currentBoard[i] = reverse(currentBoard[i])
+    return currentBoard
