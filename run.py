@@ -84,3 +84,10 @@ def mergeOneRowL(row):
             row[i - 1] = row[i]
             row[i] = 0
     return row
+
+
+#Merge Left Function
+def merge_left(currentBoard):
+    for i in range(boardSize):
+        currentBoard[i] = mergeOneRowL(currentBoard[i])
+    return currentBoard
