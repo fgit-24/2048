@@ -119,3 +119,11 @@ def transpose(currentBoard):
                 currentBoard[j][i] = currentBoard[i][j]
                 currentBoard[i][j] = temp
     return currentBoard
+
+
+# Merge Up Function
+def merge_up(currentBoard):
+    currentBoard = transpose(currentBoard)
+    currentBoard = merge_left(currentBoard)
+    currentBoard = transpose(currentBoard)
+    return currentBoard
