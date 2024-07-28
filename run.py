@@ -195,3 +195,6 @@ while numNeeded > 0:
 
 print("Welcome to 2048! Your goal is to combine values to get the number 2048 by merging the board in different directions.\nEverytime you will need to type 'd' to merge right, 'n' to merge up, 'a' to merge left, and 's' to merge down. \n\nHere is the starting board:")
 display()
+
+# Game Loop Setup
+gameOver = False
