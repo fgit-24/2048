@@ -165,7 +165,6 @@ def won():
     return False
 
 
-
 # No Moves Function
 def noMoves():
     tempBoard1 = copy.deepcopy(board)
@@ -182,3 +181,17 @@ def noMoves():
         return True
     else:
         return False
+
+
+# Initialize Game Board
+numNeeded = 2
+while numNeeded > 0:
+    rowNum = random.randint(0, boardSize - 1)
+    colNum = random.randint(0, boardSize - 1)
+
+    if board[rowNum][colNum] == 0:
+        board[rowNum][colNum] = pickNewValue()
+        numNeeded -= 1
+
+print("Welcome to 2048! Your goal is to combine values to get the number 2048 by merging the board in different directions.\nEverytime you will need to type 'd' to merge right, 'n' to merge up, 'a' to merge left, and 's' to merge down. \n\nHere is the starting board:")
+display()
