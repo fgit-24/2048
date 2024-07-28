@@ -155,3 +155,11 @@ def addNewValue():
         colNum = random.randint(0, boardSize - 1)
 
     board[rowNum][colNum] = pickNewValue()
+
+
+#Win Condition Function
+def won():
+    for row in board:
+        if 2048 in row:
+            return True
+    return False
