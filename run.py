@@ -196,5 +196,43 @@ while numNeeded > 0:
 print("Welcome to 2048! Your goal is to combine values to get the number 2048 by merging the board in different directions.\nEverytime you will need to type 'd' to merge right, 'n' to merge up, 'a' to merge left, and 's' to merge down. \n\nHere is the starting board:")
 display()
 
+
 # Game Loop Setup
 gameOver = False
+
+
+# Game Loop and User Input Handling
+while not gameOver:
+    move = input("Which way do you want to merge? ")
+
+    validInput = True
+    tempBoard = copy.deepcopy(board)
+
+    if move == "d":
+        board = merge_right(board)
+    elif move == "n":
+        board = merge_up(board)
+    elif move == "a":
+        board = merge_left(board)
+    elif move == "s":
+        board = merge_down(board)
+    else:
+        validInput = False
+
+    if not validInput:
+        print("Your input was not valid, please try again.")
+    else:
+        if board == tempBoard:
+            print("Try a different direction!")
+        else:
+            if won():
+                display()
+                print("You Won!")
+                gameOver = True
+            else:
+                addNewValue()
+                display()
+
+                if noMoves():
+                    print("Sorry you have no possible moves, you lose!")
+                    gameOver = True
