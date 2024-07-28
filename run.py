@@ -91,3 +91,11 @@ def merge_left(currentBoard):
     for i in range(boardSize):
         currentBoard[i] = mergeOneRowL(currentBoard[i])
     return currentBoard
+
+
+#Reverse Row Function
+def reverse(row):
+    new = []
+    for i in range(boardSize - 1, -1, -1):
+        new.append(row[i])
+    return new
